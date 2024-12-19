@@ -1,13 +1,12 @@
-#include "push_swap.h"
-#include "../libft/libft.h"
+#include "includes/push_swap.h"
+#include "libft/libft.h"
 
-
-s_list	*push_swap_1(int c, char **v)
+s_list *push_swap_1(int c, char **v)
 {
-	s_list	*node;
-	int		i;
-	char	**strs;
-	int		k;
+	s_list *node;
+	int i;
+	char **strs;
+	int k;
 
 	node = NULL;
 	i = 0;
@@ -28,38 +27,32 @@ s_list	*push_swap_1(int c, char **v)
 	return (node);
 }
 
-
-
-void push_swap(int c, char **v)
+s_list *push_swap(int c, char **v)
 {
 	if (c <= 1)
 	{
 		printf("error\n");
-		return ;
+		return NULL;
 	}
-	if (check_valid_args(c,v) == 0)
+	if (check_valid_args(c, v) == 0)
 	{
 		printf("error\n");
-		return ;
+		return NULL;
 	}
-	s_list *stack = push_swap_1(c,v);
+	s_list *stack = push_swap_1(c, v);
 	if (check_dup(stack) == 0)
 	{
 		printf("error\n");
 		free_stack(stack);
-		return ;
+		return NULL;
 	}
-
-	ft_rev_rotate(stack,'a');
-	while (stack)
-	{
-		printf("%d\n",stack->content);
-		stack =stack->next;
-	}
-	
+	return (stack);
 }
 
-//s_list *sort_stack(s_list *stack)
-//{
-
-//}
+int verified_sort(s_list *a, s_list *b)
+{
+	if (a->content > b->content)
+		return (1);
+	else
+		return 0;
+}

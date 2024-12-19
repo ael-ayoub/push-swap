@@ -1,12 +1,11 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-
-int	check_if_str_digits(char *str)
+int check_if_str_digits(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	if (!str || str[0] =='\0')
+	if (!str || str[0] == '\0')
 		return 0;
 	if (str[i] == '-')
 		i++;
@@ -19,11 +18,11 @@ int	check_if_str_digits(char *str)
 	return (1);
 }
 
-int	check_valid_args(int c, char **v)
+int check_valid_args(int c, char **v)
 {
-	int		i;
-	char	**strs;
-	int		k;
+	int i;
+	char **strs;
+	int k;
 
 	i = 0;
 	while (++i < c)
@@ -47,16 +46,14 @@ int	check_valid_args(int c, char **v)
 	return (1);
 }
 
-
 int check_dup(s_list *stack)
 {
 	s_list *index;
 	s_list *j;
 
-
-	if(!stack)
+	if (!stack)
 		return 0;
-	index = stack ;
+	index = stack;
 
 	while (index->next)
 	{
@@ -71,5 +68,20 @@ int check_dup(s_list *stack)
 	}
 	return (1);
 }
+int *stack_midle(s_list *stack)
+{
+	int i;
 
-
+	i = 0;
+	int index = stack_size(stack);
+	if (index < 0)
+		return (NULL);
+	while (stack && i < index / 2)
+	{
+		stack = stack->next;
+		i++;
+	}
+	if (stack)
+		return (&stack->content);
+	return (NULL);
+}

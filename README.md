@@ -89,7 +89,7 @@ Below is the structure of the project:
 ```
 
 
-## Table of Operations
+## Operations
 
 Below is a list of operations used in the **Push_Swap** project:
 

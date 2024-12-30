@@ -10,7 +10,8 @@ A sorting algorithm project that sorts data on a stack, with a limited set of in
 * [Files Structure](#files-structure)
 * [Operations](#operations)
 * [Bonus Part](#bonus-part)
-* [Error Management](#error-management)
+* [Performance](#Performance)
+* [Development](#Development)
 
 ## Project Overview
 Push_swap is a sorting algorithm project where you need to sort a stack of random integers using two stacks (stack A and stack B) and a limited set of operations. The goal is to sort the numbers with the minimum possible number of moves.
@@ -126,18 +127,18 @@ Then press Ctrl+D to terminate input and see the result.
 ## Performance
 ### Operation Count Targets:
 
-3 numbers: ≤ 3 operations
-5 numbers: ≤ 12 operations
-100 numbers: ≤ 700 operations
-500 numbers: ≤ 5500 operations
+- **3 numbers**: ≤ 3 operations
+- **5 numbers**: ≤ 12 operations
+- **100 numbers**: ≤ 700 operations
+- **500 numbers**: ≤ 5500 operations
 
 ## Error Management
 ### The program handles various error cases:
 
-Duplicate numbers
-Non-numeric input
-Numbers bigger than INT_MAX or smaller than INT_MIN
-Invalid operations in checker
+- **Duplicate numbers**
+- **Non-numeric input**
+- **Numbers bigger than INT_MAX or smaller than INT_MIN**
+- **Invalid operations in checker**
 
 Error output:
 ```bash

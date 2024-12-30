@@ -6,13 +6,13 @@
 /*   By: ael-aiss <ael-aiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:55:46 by ael-aiss          #+#    #+#             */
-/*   Updated: 2024/12/27 22:02:39 by ael-aiss         ###   ########.fr       */
+/*   Updated: 2024/12/28 17:35:30 by ael-aiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../bonus_push_swap.h"
 
-void	sa(t_stack **stack)
+void	bonus_sa(t_stack **stack)
 {
 	int	num;
 	int	index;
@@ -25,11 +25,10 @@ void	sa(t_stack **stack)
 		(*stack)->index = (*stack)->next->index;
 		(*stack)->next->num = num;
 		(*stack)->next->index = index;
-		printf("sa\n");
 	}
 }
 
-void	sb(t_stack **stack)
+void	bonus_sb(t_stack **stack)
 {
 	int	num;
 	int	index;
@@ -42,30 +41,16 @@ void	sb(t_stack **stack)
 		(*stack)->index = (*stack)->next->index;
 		(*stack)->next->num = num;
 		(*stack)->next->index = index;
-		printf("sb\n");
 	}
 }
 
-void	ss(t_stack **a, t_stack **b)
+void	bonus_ss(t_stack **a, t_stack **b)
 {
-	int	tmp;
-
-	if (*a && (*a)->next)
-	{
-		tmp = (*a)->num;
-		(*a)->num = (*a)->next->num;
-		(*a)->next->num = tmp;
-	}
-	if (*b && (*b)->next)
-	{
-		tmp = (*b)->num;
-		(*b)->num = (*b)->next->num;
-		(*b)->next->num = tmp;
-	}
-	printf("ss\n");
+	bonus_sb(b);
+	bonus_sa(a);
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	bonus_pa(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
@@ -75,11 +60,10 @@ void	pa(t_stack **a, t_stack **b)
 		*b = (*b)->next;
 		tmp->next = *a;
 		*a = tmp;
-		printf("pa\n");
 	}
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	bonus_pb(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
@@ -89,6 +73,5 @@ void	pb(t_stack **a, t_stack **b)
 		*a = (*a)->next;
 		tmp->next = *b;
 		*b = tmp;
-		printf("pb\n");
 	}
 }

@@ -6,49 +6,13 @@
 /*   By: ael-aiss <ael-aiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:55:39 by ael-aiss          #+#    #+#             */
-/*   Updated: 2024/12/26 10:55:40 by ael-aiss         ###   ########.fr       */
+/*   Updated: 2024/12/28 17:42:29 by ael-aiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../bonus_push_swap.h"
 
-void	ra(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*current;
-
-	if (*stack && (*stack)->next)
-	{
-		tmp = *stack;
-		*stack = (*stack)->next;
-		tmp->next = NULL;
-		current = *stack;
-		while (current->next)
-			current = current->next;
-		current->next = tmp;
-		printf("ra\n");
-	}
-}
-
-void	rb(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*current;
-
-	if (*stack && (*stack)->next)
-	{
-		tmp = *stack;
-		*stack = (*stack)->next;
-		tmp->next = NULL;
-		current = *stack;
-		while (current->next)
-			current = current->next;
-		current->next = tmp;
-		printf("rb\n");
-	}
-}
-
-static void	helper_rr(t_stack **stack)
+void	bonus_ra(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*current;
@@ -65,23 +29,25 @@ static void	helper_rr(t_stack **stack)
 	}
 }
 
-void	rr(t_stack **a, t_stack **b)
+void	bonus_rb(t_stack **stack)
 {
-	int	rotated;
+	t_stack	*tmp;
+	t_stack	*current;
 
-	rotated = 0;
-	if (*a && (*a)->next)
+	if (*stack && (*stack)->next)
 	{
-		helper_rr(a);
-		rotated = 1;
+		tmp = *stack;
+		*stack = (*stack)->next;
+		tmp->next = NULL;
+		current = *stack;
+		while (current->next)
+			current = current->next;
+		current->next = tmp;
 	}
-	if (*b && (*b)->next)
-	{
-		helper_rr(b);
-		rotated = 1;
-	}
-	if (rotated)
-	{
-		printf("rr\n");
-	}
+}
+
+void	bonus_rr(t_stack **a, t_stack **b)
+{
+	ra(a);
+	rb(b);
 }

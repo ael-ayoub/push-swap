@@ -65,28 +65,37 @@ Below is the structure of the project:
 ```plaintext
 .
 ├── Makefile
-├── includes/
-│   ├── push_swap.h
-│   └── checker.h
-├── libft/
-│   └── [libft source files]
-├── operations/
-│   ├── push.c
-│   ├── reverse_rotate.c
-│   ├── rotate.c
-│   └── swap.c
-├── sorting/
-│   ├── sort_small.c
-│   ├── sort_big.c
-│   ├── indexing.c
-│   └── chunks.c
-├── ft_parcing/
-│   ├── input_validation.c
-│   └── stack_init.c
-├── main.c
-├── bonus/
-│   └── checker source files
-└── checker_linux
+bonus/
+├── bonus_push_swap.h
+├── bonus_util.c
+├── main_bonus.c
+└── get_next_line/
+    ├── get_next_line.c
+    ├── get_next_line.h
+    └── get_next_line_utils.c
+└── operations/
+    ├── stack_operations_1.c
+    ├── stack_operations_2.c
+    └── stack_operations.c
+ft_parcing/
+└── valid_argument.c
+includes/
+└── push_swap.h
+libft/
+├── ft_strrchr.c
+├── splite.c
+└── atoi.c
+operations/
+├── stack_operations_1.c
+├── stack_operations_2.c
+└── stack_operations.c
+sorting/
+├── free_stack.c
+├── sort_stack.c
+├── max_min_stack.c
+├── stack.c
+├── array.c
+└── sort_2345.c
 ```
 
 
